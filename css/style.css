@@ -1,0 +1,29 @@
+ /* // - best practices? */
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    width: 100vw;
+    height: 100vh;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.choose-number-button {
+    margin-bottom: 5vh;
+}
+.container-grid-div {    
+    width: 100vh;
+    height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+}
+.grid-div {
+    flex-grow: 1;
+    flex-basis: 1em;
+    border: 0.01em, solid, black;
+    background-color: green;
+}
