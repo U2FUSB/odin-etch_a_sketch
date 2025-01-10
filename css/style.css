@@ -1,29 +1,30 @@
- /* // - best practices? */
+/* // - best practices? */
 * {
     margin: 0;
     padding: 0;
+    --grid-div-width: 100vh;
+    --grid-div-height: 100vh;
+    --grid-div-num: 16;
 }
 body {
-    width: 100vw;
-    height: 100vh;
-    margin-top: 5vh;
-    margin-bottom: 5vh;
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    justify-content: space-between;
 }
 .choose-number-button {
-    margin-bottom: 5vh;
+    margin: 3vh;
+    align-self: center;
 }
-.container-grid-div {    
-    width: 100vh;
-    height: 100vh;
+.container-grid-div {
+    width: var(--grid-div-width);
+    height: var(--grid-div-height);
+    overflow: hidden;
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 }
 .grid-div {
-    flex-grow: 1;
-    flex-basis: 1em;
-    border: 0.01em, solid, black;
+    width: calc(var(--grid-div-width) / var(--grid-div-num));
+    height: calc(var(--grid-div-height) / var(--grid-div-num));
     background-color: green;
 }
