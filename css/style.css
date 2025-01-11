@@ -1,10 +1,8 @@
-/* // - best practices? */
 * {
     margin: 0;
     padding: 0;
     --grid-div-width: 100vh;
     --grid-div-height: 100vh;
-    --grid-div-num: 16;
 }
 body {
     display: flex;
@@ -17,12 +15,11 @@ body {
 .container-grid-div {
     width: var(--grid-div-width);
     height: var(--grid-div-height);
-    overflow: hidden;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
+    overflow: hidden;
 }
+/* --grid-div-num set in javascript.js to keep dynamic*/
 .grid-div {
     width: calc(var(--grid-div-width) / var(--grid-div-num));
     height: calc(var(--grid-div-height) / var(--grid-div-num));
