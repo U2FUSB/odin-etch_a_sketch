@@ -7,7 +7,7 @@ function drawSketch(size = 16) {
         containerGridDiv.appendChild(gridDiv);
         return gridDiv;
     });
-    addGridDivCounter(gridDivs);
+    // addGridDivCounter(gridDivs);
     document
         .querySelector("*")
         .setAttribute("style", `--grid-div-num: ${size}`);

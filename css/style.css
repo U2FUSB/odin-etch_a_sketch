@@ -19,9 +19,16 @@ body {
     flex-wrap: wrap;
     overflow: hidden;
 }
+
 /* --grid-div-num set in javascript.js to keep dynamic*/
 .grid-div {
     width: calc(var(--grid-div-width) / var(--grid-div-num));
     height: calc(var(--grid-div-height) / var(--grid-div-num));
     background-color: green;
+    transition-duration: 1s;
 }
+.grid-div:hover {
+    background-color: yellow;
+    transition-duration: 1ms;
+}
+
