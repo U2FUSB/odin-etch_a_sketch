@@ -24,11 +24,11 @@ body {
 .grid-div {
     width: calc(var(--grid-div-width) / var(--grid-div-num));
     height: calc(var(--grid-div-height) / var(--grid-div-num));
-    background-color: green;
+    background-color: rgb(18, 18, 92);
     transition-duration: 1s;
 }
 .grid-div:hover {
-    background-color: yellow;
+    background-color: rgb(69, 174, 135);
     transition-duration: 1ms;
 }
 
