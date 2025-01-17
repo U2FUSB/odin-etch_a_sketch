@@ -28,7 +28,7 @@ body {
     transition-duration: 1s;
 }
 .grid-div:hover {
-    background-color: rgb(69, 174, 135);
+    background-color: var(--rand-color);
     transition-duration: 1ms;
 }
 
