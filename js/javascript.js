@@ -12,7 +12,7 @@ function drawSketch(size = 16) {
     document
         .querySelector("*")
         .setAttribute("style", `--grid-div-num: ${size}`);
-    // addGridDivCounter(gridDivs); //If I want to count the squares on the screen
+    addGridDivCounter(gridDivs); //If I want to count the squares on the screen
 }
 function getRandomColor() {
     return `#${Math.floor(Math.random() * 16 ** 6).toString(16)}`;
@@ -39,18 +39,13 @@ function addListenerChooseGridDivNumber() {
         drawSketch(numberOfGridDivs);
     });
 }
-// I try to change the color with every "mouseover". Currently, It fails, and I dont necessarily know why.
-// Only happens when I change a style attribute using the CSS variable...
 function addListenerChangeColorOnHover() {
-    containerGridDiv.addEventListener("mouseover", () => {
-
-        console.log("touched")
-    }); 
+    containerGridDiv.addEventListener("mouseover", (gridDiv) => {
+        gridDiv.target.setAttribute("style", `background-color: ${getRandomColor()}`)
+    });
 }
 drawSketch();
 addListenerChooseGridDivNumber();
 addListenerChangeColorOnHover();
 
-// JS / CSS
-// - random color when hover over div
 // - each interaction => +10% darkening effect on div UNTIL 100% reached (css opacity?)

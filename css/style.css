@@ -25,10 +25,5 @@ body {
     width: calc(var(--grid-div-width) / var(--grid-div-num));
     height: calc(var(--grid-div-height) / var(--grid-div-num));
     background-color: rgb(18, 18, 92);
-    transition-duration: 1s;
+    flex-grow: 1;
 }
-.grid-div:hover {
-    background-color: var(--rand-color);
-    transition-duration: 1ms;
-}
-
