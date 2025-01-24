@@ -9,7 +9,7 @@ body {
     justify-content: space-between;
 }
 .choose-number-button {
-    margin: 20vh;
+    margin: 5vh;
     flex-grow: 1;
     align-self: center;
     appearance: none;
