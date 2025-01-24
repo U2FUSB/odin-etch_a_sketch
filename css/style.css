@@ -18,12 +18,13 @@ body {
     display: flex;
     flex-wrap: wrap;
     overflow: hidden;
+    background-color: black;
 }
 
 /* --grid-div-num set in javascript.js to keep dynamic*/
 .grid-div {
     width: calc(var(--grid-div-width) / var(--grid-div-num));
     height: calc(var(--grid-div-height) / var(--grid-div-num));
-    background-color: rgb(18, 18, 92);
     flex-grow: 1;
+    background-color: rgb(18, 18, 92);
 }

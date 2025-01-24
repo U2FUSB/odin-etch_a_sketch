@@ -12,7 +12,7 @@ function drawSketch(size = 16) {
     document
         .querySelector("*")
         .setAttribute("style", `--grid-div-num: ${size}`);
-    addGridDivCounter(gridDivs); //If I want to count the squares on the screen
+    // addGridDivCounter(gridDivs); //If I want to count the squares on the screen
 }
 function getRandomColor() {
     return `#${Math.floor(Math.random() * 16 ** 6).toString(16)}`;
@@ -40,12 +40,22 @@ function addListenerChooseGridDivNumber() {
     });
 }
 function addListenerChangeColorOnHover() {
-    containerGridDiv.addEventListener("mouseover", (gridDiv) => {
-        gridDiv.target.setAttribute("style", `background-color: ${getRandomColor()}`)
+    containerGridDiv.childNodes.forEach((gridDiv) => {
+        gridDiv.setAttribute("opacity-value", "1");
+    });
+    containerGridDiv.addEventListener("mouseover", (gridDivEvent) => {
+        const gridDiv = gridDivEvent.target;
+        gridDiv.setAttribute(
+            "style",
+            `background-color: ${getRandomColor()};
+            opacity: ${gridDiv.getAttribute("opacity-value")};`
+        );
+        gridDiv.setAttribute(
+            "opacity-value",
+            `${gridDiv.getAttribute("opacity-value") - 0.1}`
+        );
     });
 }
 drawSketch();
 addListenerChooseGridDivNumber();
 addListenerChangeColorOnHover();
-
-// - each interaction => +10% darkening effect on div UNTIL 100% reached (css opacity?)
