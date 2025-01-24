@@ -28,6 +28,18 @@ function addGridDivCounter(gridDivs) {
         }
     });
 }
+function changeColorOnHover (gridDivEvent) {
+    const gridDiv = gridDivEvent.target;
+    gridDiv.setAttribute(
+        "style",
+        `background-color: ${getRandomColor()};
+        opacity: ${gridDiv.getAttribute("opacity-value")};`
+    );
+    gridDiv.setAttribute(
+        "opacity-value",
+        `${gridDiv.getAttribute("opacity-value") - 0.1}`
+    );
+}
 function addListenerChooseGridDivNumber() {
     chooseNumberButton.addEventListener("click", () => {
         const rawUserInput = prompt("Enter a number between 1 and 100:", 16);
@@ -37,24 +49,15 @@ function addListenerChooseGridDivNumber() {
                 ? Math.floor(userInputAsNumber)
                 : 16;
         drawSketch(numberOfGridDivs);
+        containerGridDiv.removeEventListener("mouseover", changeColorOnHover);
+        addListenerChangeColorOnHover();
     });
 }
 function addListenerChangeColorOnHover() {
     containerGridDiv.childNodes.forEach((gridDiv) => {
         gridDiv.setAttribute("opacity-value", "1");
     });
-    containerGridDiv.addEventListener("mouseover", (gridDivEvent) => {
-        const gridDiv = gridDivEvent.target;
-        gridDiv.setAttribute(
-            "style",
-            `background-color: ${getRandomColor()};
-            opacity: ${gridDiv.getAttribute("opacity-value")};`
-        );
-        gridDiv.setAttribute(
-            "opacity-value",
-            `${gridDiv.getAttribute("opacity-value") - 0.1}`
-        );
-    });
+    containerGridDiv.addEventListener("mouseover", changeColorOnHover);
 }
 drawSketch();
 addListenerChooseGridDivNumber();
